@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:Outfit, sans-serif;
+  background: #0d192c;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.card {
+  background: #14253d;
+  padding: 24px;
+  border-radius: 15px;
+  width: 300px;
+  max-width: 100%;
+}
+
+.card__images {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-image {
+  width: 100%;
+  display: block;
+}
+
+.card__images-layer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.view {
+  position: absolute;
+  width: 48px !important;
+  height: 48px;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card__images:hover .card__images-layer,
+.card__images:hover .view {
+  opacity: 1;
+}
+
+.text-container {
+  margin: 20px 0;
+}
+
+.card__title {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.description {
+  color: #8bacd9;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.card__time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card__time-left,
+.card__time-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card__time-left {
+  color: #00fff7;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.card__time-right {
+  color: #8bacd9;
+  font-size: 14px;
+}
+
+.card__time img {
+  width: auto;
+  height: 18px;
+}
+
+.card__creator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #2f415b;
+  padding-top: 16px;
+  color: #8bacd9;
+  font-size: 13px;
+}
+
+.card__creator img {
+  width: 32px;
+  height: 32px;
+  border: 1px solid white;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card__creator span {
+  line-height: 1.5;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: #8bacd9;
+  padding: 16px 0;
+}
+
+.attribution a {
+  color: #00fff7;
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color: white;
+}
+
+@media (max-width: 375px) {
+  .card {
+    padding: 20px;
+  }
+}
